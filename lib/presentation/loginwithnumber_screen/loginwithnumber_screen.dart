@@ -71,7 +71,7 @@ class LoginwithnumberScreen extends GetWidget<LoginwithnumberController> {
       SizedBox(height: 5.v),
       CustomTextFormField(
           controller: controller.emailController,
-          hintText: "lbl_91_98986_98645".tr,
+          hintText: "Enter Your Mobile Number or Email",
           textInputAction: TextInputAction.done,
           prefix: Container(
               margin: EdgeInsets.fromLTRB(14.h, 10.v, 8.h, 10.v),
