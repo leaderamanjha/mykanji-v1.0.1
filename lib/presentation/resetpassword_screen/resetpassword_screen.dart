@@ -67,7 +67,7 @@ class ResetpasswordScreen extends GetWidget<ResetpasswordController> {
       SizedBox(height: 6.v),
       Obx(() => CustomTextFormField(
           controller: controller.passwordController,
-          hintText: "lbl_opksdgb245w".tr,
+          hintText: "Enter Your Password",
           textInputType: TextInputType.visiblePassword,
           prefix: Container(
               margin: EdgeInsets.fromLTRB(14.h, 10.v, 8.h, 10.v),
@@ -88,12 +88,7 @@ class ResetpasswordScreen extends GetWidget<ResetpasswordController> {
                       height: 16.adaptSize,
                       width: 16.adaptSize))),
           suffixConstraints: BoxConstraints(maxHeight: 41.v),
-          validator: (value) {
-            if (value == null || (!isValidPassword(value, isRequired: true))) {
-              return "err_msg_please_enter_valid_password".tr;
-            }
-            return null;
-          },
+         
           obscureText: controller.isShowPassword.value))
     ]);
   }
@@ -127,12 +122,7 @@ class ResetpasswordScreen extends GetWidget<ResetpasswordController> {
                       height: 16.adaptSize,
                       width: 16.adaptSize))),
           suffixConstraints: BoxConstraints(maxHeight: 41.v),
-          validator: (value) {
-            if (value == null || (!isValidPassword(value, isRequired: true))) {
-              return "err_msg_please_enter_valid_password".tr;
-            }
-            return null;
-          },
+          
           obscureText: controller.isShowPassword1.value))
     ]);
   }

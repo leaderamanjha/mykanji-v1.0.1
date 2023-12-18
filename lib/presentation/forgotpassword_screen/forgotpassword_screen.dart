@@ -71,7 +71,7 @@ class ForgotpasswordScreen extends GetWidget<ForgotpasswordController> {
       SizedBox(height: 6.v),
       CustomTextFormField(
           controller: controller.emailController,
-          hintText: "msg_siddarthaj23_gmail_com".tr,
+          hintText: "Enter Your Email Id",
           hintStyle: CustomTextStyles.bodyLargePrimaryContainer,
           textInputAction: TextInputAction.done,
           textInputType: TextInputType.emailAddress,

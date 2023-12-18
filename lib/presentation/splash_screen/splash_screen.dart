@@ -11,7 +11,7 @@ class SplashScreen extends GetWidget<SplashController> {
     return SafeArea(
         child: Scaffold(
             body: SizedBox(
-                width: 412.h,
+                width: 500.h,
                 child: Container(
                     padding:
                         EdgeInsets.symmetric(horizontal: 54.h, vertical: 288.v),
