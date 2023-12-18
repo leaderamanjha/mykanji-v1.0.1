@@ -19,71 +19,69 @@ class LogintwoScreen extends GetWidget<LogintwoController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            resizeToAvoidBottomInset: false,
-            body: Form(
-                key: _formKey,
-                child: Container(
-                    width: double.maxFinite,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 20.h, vertical: 40.v),
-                    child: Column(children: [
-                      CustomImageView(
-                          imagePath: ImageConstant.imgLogo,
-                          height: 80.adaptSize,
-                          width: 80.adaptSize),
-                      SizedBox(height: 42.v),
-                      Text("lbl_log_in2".tr, style: theme.textTheme.titleLarge),
-                      SizedBox(height: 39.v),
-                      _buildInputWithLabel(),
-                      SizedBox(height: 12.v),
-                      _buildPasswordInput(),
-                      SizedBox(height: 14.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: GestureDetector(
-                              onTap: () {
-                                onTapTxtSignInWithOTP();
-                              },
-                              child: Text("msg_sign_in_with_otp".tr,
-                                  style: theme.textTheme.bodyMedium))),
-                      SizedBox(height: 39.v),
-                      _buildSubmitButton(),
-                      SizedBox(height: 41.v),
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: SafeArea(
+          child: Form(
+              key: _formKey,
+              child: Container(
+                  width: double.maxFinite,
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 20.h, vertical: 40.v),
+                  child: Column(children: [
+                    CustomImageView(
+                        imagePath: ImageConstant.imgLogo,
+                        height: 80.adaptSize,
+                        width: 80.adaptSize),
+                    SizedBox(height: 42.v),
+                    Text("lbl_log_in2".tr, style: theme.textTheme.titleLarge),
+                    SizedBox(height: 39.v),
+                    _buildInputWithLabel(),
+                    SizedBox(height: 12.v),
+                    _buildPasswordInput(),
+                    SizedBox(height: 14.v),
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: GestureDetector(
+                            onTap: () {
+                              onTapTxtSignInWithOTP();
+                            },
+                            child: Text("msg_sign_in_with_otp".tr,
+                                style: theme.textTheme.bodyMedium))),
+                    SizedBox(height: 39.v),
+                    _buildSubmitButton(),
+                    SizedBox(height: 41.v),
+                    GestureDetector(
+                        onTap: () {
+                          onTapTxtForgotYourPassword();
+                        },
+                        child: Text("msg_forgot_your_password".tr,
+                            style: CustomTextStyles.bodyLargeBlack900)),
+                    SizedBox(height: 41.v),
+                    _buildFrame(),
+                    SizedBox(height: 23.v),
+                    _buildSocialButtons(),
+                    SizedBox(height: 24.v),
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Padding(
+                          padding: EdgeInsets.only(bottom: 1.v),
+                          child: Text("msg_don_t_have_an_account".tr,
+                              style: CustomTextStyles.bodyLargeBlack900)),
                       GestureDetector(
                           onTap: () {
-                            onTapTxtForgotYourPassword();
+                            onTapTxtSignUp();
                           },
-                          child: Text("msg_forgot_your_password".tr,
-                              style: CustomTextStyles.bodyLargeBlack900)),
-                      SizedBox(height: 41.v),
-                      _buildFrame(),
-                      SizedBox(height: 23.v),
-                      _buildSocialButtons(),
-                      SizedBox(height: 24.v),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                                padding: EdgeInsets.only(bottom: 1.v),
-                                child: Text("msg_don_t_have_an_account".tr,
-                                    style: CustomTextStyles.bodyLargeBlack900)),
-                            GestureDetector(
-                                onTap: () {
-                                  onTapTxtSignUp();
-                                },
-                                child: Padding(
-                                    padding: EdgeInsets.only(left: 6.h),
-                                    child: Text("lbl_sign_up".tr,
-                                        style: CustomTextStyles
-                                            .titleMediumBlue300
-                                            .copyWith(
-                                                decoration:
-                                                    TextDecoration.underline))))
-                          ]),
-                      SizedBox(height: 9.v)
-                    ])))));
+                          child: Padding(
+                              padding: EdgeInsets.only(left: 6.h),
+                              child: Text("lbl_sign_up".tr,
+                                  style: CustomTextStyles.titleMediumBlue300
+                                      .copyWith(
+                                          decoration:
+                                              TextDecoration.underline))))
+                    ]),
+                    SizedBox(height: 9.v)
+                  ]))),
+        ));
   }
 
   /// Section Widget

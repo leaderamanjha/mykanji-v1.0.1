@@ -20,10 +20,10 @@ class HomeScreen extends GetWidget<HomeController> {
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
 
-    return SafeArea(
-      child: Scaffold(
-        body: SizedBox(
-          width: 412.h,
+    return Scaffold(
+      body: SafeArea(
+        child: SizedBox(
+          width: 500.h,
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 10.v),
             decoration: AppDecoration.fillOnErrorContainer.copyWith(

@@ -19,57 +19,55 @@ class SignUpOneScreen extends GetWidget<SignUpOneController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            resizeToAvoidBottomInset: false,
-            body: Form(
-                key: _formKey,
-                child: Container(
-                    width: double.maxFinite,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 20.h, vertical: 21.v),
-                    child: Column(children: [
-                      CustomImageView(
-                          imagePath: ImageConstant.imgLogo,
-                          height: 80.adaptSize,
-                          width: 80.adaptSize),
-                      SizedBox(height: 29.v),
-                      Text("lbl_sign_up".tr, style: theme.textTheme.titleLarge),
-                      SizedBox(height: 25.v),
-                      _buildInputWithLabelName(),
-                      SizedBox(height: 13.v),
-                      _buildInputWithLabelEmail(),
-                      SizedBox(height: 6.v),
-                      _buildInputWithLabelPassword(),
-                      SizedBox(height: 12.v),
-                      _buildInputWithLabelConfirmPassword(),
-                      SizedBox(height: 27.v),
-                      _buildContinueButton(),
-                      SizedBox(height: 28.v),
-                      _buildFrameRow(),
-                      SizedBox(height: 26.v),
-                      _buildSocialButtons(),
-                      SizedBox(height: 28.v),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("msg_already_have_an".tr,
-                                style: CustomTextStyles.bodyLargeBlack900),
-                            GestureDetector(
-                                onTap: () {
-                                  loginTwo();
-                                },
-                                child: Padding(
-                                    padding: EdgeInsets.only(left: 6.h),
-                                    child: Text("lbl_login".tr,
-                                        style: CustomTextStyles
-                                            .titleMediumBlue300
-                                            .copyWith(
-                                                decoration:
-                                                    TextDecoration.underline))))
-                          ]),
-                      SizedBox(height: 5.v)
-                    ])))));
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: SafeArea(
+          child: Form(
+              key: _formKey,
+              child: Container(
+                  width: double.maxFinite,
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 20.h, vertical: 21.v),
+                  child: Column(children: [
+                    CustomImageView(
+                        imagePath: ImageConstant.imgLogo,
+                        height: 80.adaptSize,
+                        width: 80.adaptSize),
+                    SizedBox(height: 29.v),
+                    Text("lbl_sign_up".tr, style: theme.textTheme.titleLarge),
+                    SizedBox(height: 25.v),
+                    _buildInputWithLabelName(),
+                    SizedBox(height: 13.v),
+                    _buildInputWithLabelEmail(),
+                    SizedBox(height: 6.v),
+                    _buildInputWithLabelPassword(),
+                    SizedBox(height: 12.v),
+                    _buildInputWithLabelConfirmPassword(),
+                    SizedBox(height: 27.v),
+                    _buildContinueButton(),
+                    SizedBox(height: 28.v),
+                    _buildFrameRow(),
+                    SizedBox(height: 26.v),
+                    _buildSocialButtons(),
+                    SizedBox(height: 28.v),
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Text("msg_already_have_an".tr,
+                          style: CustomTextStyles.bodyLargeBlack900),
+                      GestureDetector(
+                          onTap: () {
+                            loginTwo();
+                          },
+                          child: Padding(
+                              padding: EdgeInsets.only(left: 6.h),
+                              child: Text("lbl_login".tr,
+                                  style: CustomTextStyles.titleMediumBlue300
+                                      .copyWith(
+                                          decoration:
+                                              TextDecoration.underline))))
+                    ]),
+                    SizedBox(height: 5.v)
+                  ]))),
+        ));
   }
 
   /// Section Widget
