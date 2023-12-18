@@ -16,52 +16,53 @@ class ForgotpasswordScreen extends GetWidget<ForgotpasswordController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            resizeToAvoidBottomInset: false,
-            body: Form(
-                key: _formKey,
-                child: Container(
-                    width: double.maxFinite,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 20.h, vertical: 40.v),
-                    child: Column(children: [
-                      CustomImageView(
-                          imagePath: ImageConstant.imgLogo,
-                          height: 80.adaptSize,
-                          width: 80.adaptSize),
-                      SizedBox(height: 42.v),
-                      Text("msg_forget_your_password".tr,
-                          style: theme.textTheme.titleLarge),
-                      SizedBox(height: 39.v),
-                      Text("msg_enter_your_registered".tr,
-                          style: CustomTextStyles.bodyLargeBlack900),
-                      SizedBox(height: 39.v),
-                      _buildInputWithLabel(),
-                      SizedBox(height: 24.v),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                                padding: EdgeInsets.only(bottom: 1.v),
-                                child: Text("msg_don_t_have_an_account".tr,
-                                    style: CustomTextStyles.bodyLargeBlack900)),
-                            GestureDetector(
-                                onTap: () {
-                                  onTapTxtSignUp();
-                                },
-                                child: Padding(
-                                    padding: EdgeInsets.only(left: 6.h),
-                                    child: Text("lbl_sign_up".tr,
-                                        style: CustomTextStyles
-                                            .titleMediumBlue300
-                                            .copyWith(
-                                                decoration:
-                                                    TextDecoration.underline))))
-                          ]),
-                      SizedBox(height: 5.v)
-                    ]))),
-            bottomNavigationBar: _buildResetPassword()));
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: SafeArea(
+          child: Form(
+              key: _formKey,
+              child: Container(
+                  width: double.maxFinite,
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 20.h, vertical: 40.v),
+                  child: Column(children: [
+                    CustomImageView(
+                        imagePath: ImageConstant.imgLogo,
+                        height: 80.adaptSize,
+                        width: 80.adaptSize),
+                    SizedBox(height: 42.v),
+                    Text("msg_forget_your_password".tr,
+                        style: theme.textTheme.titleLarge),
+                    SizedBox(height: 39.v),
+                    Text("msg_enter_your_registered".tr,
+                        style: CustomTextStyles.bodyLargeBlack900),
+                    SizedBox(height: 39.v),
+                    _buildInputWithLabel(),
+                    SizedBox(height: 24.v),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Padding(
+                              padding: EdgeInsets.only(bottom: 1.v),
+                              child: Text("msg_don_t_have_an_account".tr,
+                                  style: CustomTextStyles.bodyLargeBlack900)),
+                          GestureDetector(
+                              onTap: () {
+                                onTapTxtSignUp();
+                              },
+                              child: Padding(
+                                  padding: EdgeInsets.only(left: 6.h),
+                                  child: Text("lbl_sign_up".tr,
+                                      style: CustomTextStyles
+                                          .titleMediumBlue300
+                                          .copyWith(
+                                              decoration:
+                                                  TextDecoration.underline))))
+                        ]),
+                    SizedBox(height: 5.v)
+                  ]))),
+        ),
+        bottomNavigationBar: _buildResetPassword());
   }
 
   /// Section Widget

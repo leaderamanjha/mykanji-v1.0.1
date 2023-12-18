@@ -12,41 +12,42 @@ class ForgetpasswordotpScreen extends GetWidget<ForgetpasswordotpController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            resizeToAvoidBottomInset: false,
-            body: Container(
-                width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 40.v),
-                child: Column(children: [
-                  CustomImageView(
-                      imagePath: ImageConstant.imgLogo,
-                      height: 80.adaptSize,
-                      width: 80.adaptSize),
-                  SizedBox(height: 40.v),
-                  Text("msg_otp_verification".tr,
-                      style: theme.textTheme.titleLarge),
-                  SizedBox(height: 40.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("msg_verification_code".tr,
-                          style: CustomTextStyles.bodyMediumBluegray80001)),
-                  SizedBox(height: 7.v),
-                  Obx(() => CustomPinCodeTextField(
-                      context: Get.context!,
-                      controller: controller.otpController.value,
-                      onChanged: (value) {})),
-                  SizedBox(height: 42.v),
-                  Text("msg_didn_t_receive".tr,
-                      style: theme.textTheme.bodyMedium),
-                  SizedBox(height: 39.v),
-                  CustomImageView(
-                      imagePath: ImageConstant.imgEnterOtpCuate,
-                      height: 240.v,
-                      width: 226.h),
-                  SizedBox(height: 5.v)
-                ])),
-            bottomNavigationBar: _buildContinueButton()));
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: SafeArea(
+          child: Container(
+              width: double.maxFinite,
+              padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 40.v),
+              child: Column(children: [
+                CustomImageView(
+                    imagePath: ImageConstant.imgLogo,
+                    height: 80.adaptSize,
+                    width: 80.adaptSize),
+                SizedBox(height: 40.v),
+                Text("msg_otp_verification".tr,
+                    style: theme.textTheme.titleLarge),
+                SizedBox(height: 40.v),
+                Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text("msg_verification_code".tr,
+                        style: CustomTextStyles.bodyMediumBluegray80001)),
+                SizedBox(height: 7.v),
+                Obx(() => CustomPinCodeTextField(
+                    context: Get.context!,
+                    controller: controller.otpController.value,
+                    onChanged: (value) {})),
+                SizedBox(height: 42.v),
+                Text("msg_didn_t_receive".tr,
+                    style: theme.textTheme.bodyMedium),
+                SizedBox(height: 39.v),
+                CustomImageView(
+                    imagePath: ImageConstant.imgEnterOtpCuate,
+                    height: 240.v,
+                    width: 226.h),
+                SizedBox(height: 5.v)
+              ])),
+        ),
+        bottomNavigationBar: _buildContinueButton());
   }
 
   /// Section Widget
